@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>UEC Caballeria</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">U.E.C Caballeria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">            
+            <li class="nav-item">
+              <a class="nav-link" href="/views/jinete.ejs">Jinetes</a>
+            </li>         
+            <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="/createc">Registrar Caballo</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" id="search-form">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="search-input">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>     
+          </form>
+          <script>
+            document.getElementById('search-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                search();
+            });
+        </script>          
+          </div>
+        </nav>
+        <div class="container mt-5">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Codigo Caballo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Codigo UELN</th>
+                <th scope="col">Microchip</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Nacimiento</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Capa</th>
+                <th scope="col">Alzada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% results.forEach((id) => { %>                
+              <tr>
+                <td><%= id.id %></td>
+                <td><%= id.codigo_caballo %></td>
+                <td><%= id.nombre %></td>
+                <td><%= id.codigo_ueln %></td>
+                <td><%= id.microchip %></td>
+                <td><%= id.raza %></td>
+                <td><%= id.nacimiento %></td>
+                <td><%= id.sexo %></td>
+                <td><%= id.capa %></td>
+                <td><%= id.alzada %></td>
+                <td>
+                  <a href="/edit" class="btn btn-outline-info">Editar</a>
+                  <a href="/delete" class="btn btn-outline-danger">Borrar</a>
+                </td>
+              </tr>               
+             <% }) %>  
+            </tbody>
+          </table>
+        </div>
+
+    
+  
+    <footer class="bg-dark py-3">
+      <p class="text-center text-white">&copy; U.E.C Caballeria 2023</p>
+    </footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-jq0nH1vAWKdys3xTg
+
+
+
+  
+             
