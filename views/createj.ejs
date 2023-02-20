@@ -35,16 +35,18 @@
             <div class="card border-secondary">
                 <div class="card-header">Nuevo Registro</div>
                 <div class="card-body">
-                    <form action="/save" method="POST">
+                    <form action="/save" method="POST" enctype="application/x-www-form-urlencoded">
                         <div class="form-column">
+                            <!-- <label for="id" class="form-label">ID</label>
+                            <input type="text" name="id"> -->
                             <label for="Sable" class="form-label">Sable</label>
-                            <input type="text"  id="Sable" name="Sable">
+                            <input type="text" name="Sable">
                             <label for="Nombre" class="form-label">Nombre</label>
-                            <input type="text"  id="Nombre" name="Nombre">
+                            <input type="text" name="Nombre">
                             <label for="Apellido" class="form-label">Apellido</label>
-                            <input type="text"  id="Apellido" name="Apellido">
+                            <input type="text" name="Apellido">
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/views/jinete.ejs" class="btn btn-secondary">Cancelar</a>
                     </form>
                 

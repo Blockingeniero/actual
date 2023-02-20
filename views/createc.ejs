@@ -40,30 +40,30 @@
             <div class="card border-secondary">
                 <div class="card-header">Nuevo Registro de Caballo</div>
                 <div class="card-body">
-                    <form action="/save" method="POST">
+                    <form action="/save" method="POST" enctype="application/x-www-form-urlencoded">
                         <div class="form-column">
                             <label for="codigo_caballo" class="form-label">Codigo_caballo</label>
-                            <input type="text" id="codigo_caballo" name="codigo_caballo">
+                            <input type="text" name="codigo_caballo">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre">                       
+                            <input type="text" name="nombre">                       
                             <label for="jinete" class="form-label">Codigo_ueln</label>
-                            <input type="text" id="codigo_ueln" name="codigo_ueln" >
+                            <input type="text" name="codigo_ueln" >
                             <label for="caballo" class="form-label">Microchip</label>
-                            <input type="text" id="microchip" name="microchip" >
+                            <input type="text" name="microchip" >
                         </div><br>
                         <div class="form-column">
                             <label for="caballo" class="form-label">Raza</label>
-                            <input type="text"  id="raza" name="raza" >
+                            <input type="text" name="raza" >
                             <label for="caballo" class="form-label">Nacimiento</label>
-                            <input type="text"  id="nacimiento" name="nacimiento" >
+                            <input type="text" name="nacimiento" >
                             <label for="caballo" class="form-label">Sexo</label>
-                            <input type="text"  id="sexo" name="sexo" >
+                            <input type="text" name="sexo" >
                             <label for="caballo" class="form-label">Capa</label>
-                            <input type="text"  id="capa" name="capa" >
+                            <input type="text" name="capa" >
                             <label for="caballo" class="form-label">Alzada</label>
-                            <input type="text"  id="alzada" name="alzada" >
+                            <input type="text" name="alzada" >
                         </div>
-                        <button type="submit" class="btn btn-primary" tabinex="5">Guardar</button>
+                        <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/views/caballos.ejs" class="btn btn-secondary">Cancelar</a>
                     </form>
                 
