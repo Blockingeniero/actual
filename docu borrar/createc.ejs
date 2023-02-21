@@ -26,37 +26,47 @@
             <li class="nav-item">
               <a class="nav-link" href="/views/jinete.ejs">Jinetes</a>
             </li>
-            <li class="nav-item dropdown">             
-            </li>           
-            </ul>            
+            <li class="nav-item dropdown">
+             
+            </li>
+            
+          </ul>            
           </div>
         </nav>
         <div class="container mt-4">
             <div class="card border-secondary">
-                <div class="card-header">Nuevo Registro</div>
+                <div class="card-header">Nuevo Registro de Caballo</div>
                 <div class="card-body">
-                    <form action="/savej" method="POST" enctype="application/x-www-form-urlencoded">
+                    <form action="/savec" method="POST" enctype="application/x-www-form-urlencoded">
                         <div class="form-column">
-                            <!-- <label for="id" class="form-label">ID</label>
-                            <input type="text" name="id"> -->
-                            <label for="sable" class="form-label">Sable</label>
-                            <input type="text" name="sable">
+                            <label for="codigo_caballo" class="form-label">Codigo_caballo</label>
+                            <input type="text" name="codigo_caballo">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" name="nombre">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" name="apellido">
+                            <input type="text" name="nombre">                       
+                            <label for="codigo_ueln" class="form-label">Codigo_ueln</label>
+                            <input type="text" name="codigo_ueln" >
+                            <label for="microchip" class="form-label">Microchip</label>
+                            <input type="text" name="microchip" >
+                        </div><br>
+                        <div class="form-column">
+                            <label for="raza" class="form-label">Raza</label>
+                            <input type="text" name="raza" >
+                            <label for="nacimiento" class="form-label">Nacimiento</label>
+                            <input type="text" name="nacimiento" >
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <input type="text" name="sexo" >
+                            <label for="capa" class="form-label">Capa</label>
+                            <input type="text" name="capa" >
+                            <label for="alzada" class="form-label">Alzada</label>
+                            <input type="text" name="alzada" >
                         </div>
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
-                        <a href="/views/jinete.ejs" class="btn btn-secondary">Cancelar</a>
-                    </form>
-                
+                        <a href="/views/caballos.ejs" class="btn btn-secondary">Cancelar</a>
+                    </form>                
                 </div>
-
             </div>
-
         </div>
        
-  
     <footer class="bg-dark py-3">
       <p class="text-center text-white">&copy; U.E.C Caballeria 2023</p>
     </footer>

@@ -38,18 +38,28 @@ router.get('/views/caballos.ejs', (req, res)=> {
         }        
     })
 })
- 
+router.get('/views/patrulla.ejs', (req, res)=> {
 
-router.get('/createj', (req, res)=> {
-    res.render('createj')
-}) 
-router.get('/createc', (req, res)=> {
-    res.render('createc')
-}) 
+    conexion.query('SELECT * FROM patrulla', (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('patrulla.ejs', {results:results.rows});
+        }        
+    })
+})
+
+// router.get('/createj', (req, res)=> {
+//     res.render('createj')
+// }) 
+// router.get('/createc', (req, res)=> {
+//     res.render('createc')
+// }) 
 
 const crud = require('./controles/crud')
 router.post('/savej', crud.savej)
 router.post('/savec', crud.savec)
+router.post('/savep', crud.savep)
 
 
 const port = process.env.PORT || 3000;

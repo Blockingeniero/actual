@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>UEC Caballeria</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">U.E.C Caballeria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">            
+            <li class="nav-item">
+              <a class="nav-link" href="/views/caballos.ejs">Caballos</a>
+        
+            <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="/views/jinete.ejs">Jinetes</a>
+              </li>
+            </ul><br>
+            <form class="txt-end form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+        <div class="container mt-4">
+            <div class="card border-secondary">
+                <div class="card-header">Nuevo Registro</div>
+                <div class="card-body">
+                    <form action="/savep" method="POST" enctype="application/x-www-form-urlencoded">
+                        <div class="form-column">
+                            <label for="caballo" class="form-label">Caballo</label>
+                            <input type="text" name="caballo">
+                            <label for="jinete" class="form-label">Jinete</label>
+                            <input type="text" name="jinete">
+                            <label for="turno" class="form-label">Turno</label>
+                            <input type="text" name="turno">
+                        </div>
+                        <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                        <a href="/views/patrulla.ejs" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                
+                </div>
+
+                </div>
+                <div class="container mt-5">
+                    <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Jinete</th>
+                        <th scope="col">Caballo</th>
+                        <th scope="col">Turno</th>
+                        <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach((id) => { %>                
+                        <tr>
+                        <td><%= id.id_patrulla %></td>
+                        <td><%= id.caballo %></td>
+                        <td><%= id.jinete %></td>
+                        <td><%= id.turno %></td>
+                        <td><%= id.Fecha %></td>
+                        <td>
+                            <a href="/edit" class="btn btn-outline-info">Editar</a>
+                        </td>
+                        </tr>               
+                    <% }) %>  
+                    </tbody>
+                    </table>
+                </div>
+  
+    <footer class="bg-dark py-3">
+      <p class="text-center text-white">&copy; U.E.C Caballeria 2023</p>
+    </footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-jq0nH1vAWKdys3xTg
+
+
+
+  
+             

@@ -28,7 +28,7 @@ exports.savec = (req, res) => {
   if (!codigo_caballo || !nombre || !codigo_ueln || !microchip || !raza || !nacimiento || !sexo || !capa || !alzada) {
     return res.status(400).json({
       success: false,
-      message: 'Los campos son requeridos',
+      message: 'Los campos de caballos son requeridos',
     });
   }
   conexion.query('INSERT INTO caballo ("codigo_caballo", "nombre", "codigo_ueln", "microchip", "raza", "nacimiento", "sexo", "capa", "alzada") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)', 
@@ -42,6 +42,28 @@ exports.savec = (req, res) => {
       });
     } else {
       res.redirect('/views/caballos.ejs');
+    }
+  });
+};
+
+exports.savep = (req, res) => {
+  const {caballo, jinete, turno} = req.body;
+  if (!caballo || !jinete || !turno) {
+    return res.status(400).json({
+      success: false,
+      message: 'Los campos de turno son requeridos',
+    });
+  }
+  conexion.query('INSERT INTO patrulla ("caballo", "jinete", "turno") VALUES ($1, $2, $3)', [caballo, jinete, turno], (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).json({
+        success: false,
+        message: 'Ocurrió un error al intentar insertar en la base de datos',
+        error: error.message,
+      });
+    } else {
+      res.redirect('/views/patrulla.ejs');
     }
   });
 };

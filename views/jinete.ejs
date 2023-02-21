@@ -21,23 +21,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-              <a class="nav-link" href="/views/caballos.ejs">Caballos</a>
-            <!-- </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Accesos
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Herreria</a>
-                <a class="dropdown-item" href="#">Cuadra</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Potros</a>
-              </div>
-            </li> -->
+              <a class="nav-link" href="/views/caballos.ejs">Caballos</a>         
+            
             <li class="nav-item">
               <li class="nav-item">
-                <a class="nav-link" href="/createj">Registrar Jinete</a>
-              </li>
+                <a class="nav-link" href="/views/patrulla.ejs">Patrulla</a>
+            </li>
             </ul><br>
             <form class="txt-end form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -45,6 +34,25 @@
             </form>
           </div>
         </nav>
+        <div class="container mt-4">
+          <div class="card border-secondary">
+              <div class="card-header">Nuevo Registro</div>
+              <div class="card-body">
+                  <form action="/savej" method="POST" enctype="application/x-www-form-urlencoded">
+                      <div class="form-column">
+                          <label for="sable" class="form-label">Sable</label>
+                          <input type="text" name="sable">
+                          <label for="nombre" class="form-label">Nombre</label>
+                          <input type="text" name="nombre">
+                          <label for="apellido" class="form-label">Apellido</label>
+                          <input type="text" name="apellido">
+                      </div>
+                      <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                      <a href="/views/jinete.ejs" class="btn btn-secondary">Cancelar</a>
+                  </form>                
+              </div>
+          </div>
+      </div>
         <div class="container mt-5">
             <table class="table table-striped">
               <thead>
@@ -63,8 +71,7 @@
                   <td><%= id.nombre %></td>
                   <td><%= id.apellido %></td>
                   <td>
-                    <a href="/edit" class="btn btn-outline-info">Editar</a>
-                    <a href="/delete" class="btn btn-outline-danger">Borrar</a>
+                    <a href="/edit" class="btn btn-outline-info">Editar</a>                  
                   </td>
                 </tr>               
                <% }) %>  
