@@ -48,7 +48,8 @@ router.get('/createc', (req, res)=> {
 }) 
 
 const crud = require('./controles/crud')
-router.post('/save', crud.save)
+router.post('/savej', crud.savej)
+router.post('/savec', crud.savec)
 
 
 const port = process.env.PORT || 3000;

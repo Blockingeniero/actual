@@ -29,38 +29,35 @@
             <li class="nav-item dropdown">
              
             </li>
-            <li class="nav-item">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-            </ul>            
+            
+          </ul>            
           </div>
         </nav>
         <div class="container mt-4">
             <div class="card border-secondary">
                 <div class="card-header">Nuevo Registro de Caballo</div>
                 <div class="card-body">
-                    <form action="/save" method="POST" enctype="application/x-www-form-urlencoded">
+                    <form action="/savec" method="POST" enctype="application/x-www-form-urlencoded">
                         <div class="form-column">
                             <label for="codigo_caballo" class="form-label">Codigo_caballo</label>
                             <input type="text" name="codigo_caballo">
-                            <label for="nombre">Nombre</label>
+                            <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" name="nombre">                       
-                            <label for="jinete" class="form-label">Codigo_ueln</label>
+                            <label for="codigo_ueln" class="form-label">Codigo_ueln</label>
                             <input type="text" name="codigo_ueln" >
-                            <label for="caballo" class="form-label">Microchip</label>
+                            <label for="microchip" class="form-label">Microchip</label>
                             <input type="text" name="microchip" >
                         </div><br>
                         <div class="form-column">
-                            <label for="caballo" class="form-label">Raza</label>
+                            <label for="raza" class="form-label">Raza</label>
                             <input type="text" name="raza" >
-                            <label for="caballo" class="form-label">Nacimiento</label>
+                            <label for="nacimiento" class="form-label">Nacimiento</label>
                             <input type="text" name="nacimiento" >
-                            <label for="caballo" class="form-label">Sexo</label>
+                            <label for="sexo" class="form-label">Sexo</label>
                             <input type="text" name="sexo" >
-                            <label for="caballo" class="form-label">Capa</label>
+                            <label for="capa" class="form-label">Capa</label>
                             <input type="text" name="capa" >
-                            <label for="caballo" class="form-label">Alzada</label>
+                            <label for="alzada" class="form-label">Alzada</label>
                             <input type="text" name="alzada" >
                         </div>
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
