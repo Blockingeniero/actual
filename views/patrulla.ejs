@@ -43,9 +43,15 @@
                             <label for="caballo" class="form-label">Caballo</label>
                             <input type="text" name="caballo">
                             <label for="jinete" class="form-label">Jinete</label>
-                            <input type="text" name="jinete">
+                            <input type="text" name="jinete">                                                       
                             <label for="turno" class="form-label">Turno</label>
-                            <input type="text" name="turno">
+                            <select name="turno" class="form-select">
+                                <option selected>Añadir turno</option>
+                                <option value="Mañana">Mañana</option>
+                                <option value="Tarde">Tarde</option>
+                                <option value="Completo">Dia completo</option>
+                                <option value="Especial">Servicio Especial</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/views/patrulla.ejs" class="btn btn-secondary">Cancelar</a>
@@ -85,8 +91,7 @@
     <footer class="bg-dark py-3">
       <p class="text-center text-white">&copy; U.E.C Caballeria 2023</p>
     </footer>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-jq0nH1vAWKdys3xTg
 
 

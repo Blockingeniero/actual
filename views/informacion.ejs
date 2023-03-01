@@ -9,11 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>UEC Caballeria</title>
+    <title>Criptomonedas</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">U.E.C Caballeria</a>
+        <a class="navbar-brand mx-5" href="/">DB Web3</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,11 +21,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-              <a class="nav-link" href="/views/caballos.ejs">Caballos</a>         
+              <a class="nav-link" href="/views/caballos.ejs">DB IA</a>         
             
             <li class="nav-item">
               <li class="nav-item">
-                <a class="nav-link" href="/views/patrulla.ejs">Patrulla</a>
+                <a class="nav-link" href="/views/patrulla.ejs">DB Web3</a>
             </li>
             </ul><br>
             <form class="txt-end form-inline my-2 my-lg-0">
@@ -36,19 +36,21 @@
         </nav>
         <div class="container mt-4">
           <div class="card border-secondary">
-              <div class="card-header">Nuevo Registro</div>
+              <div class="card-header">Nuevo Registro de Informacion Cripto</div>
               <div class="card-body">
                   <form action="/savej" method="POST" enctype="application/x-www-form-urlencoded">
                       <div class="form-column">
-                          <label for="sable" class="form-label">Sable</label>
-                          <input type="text" name="sable">
-                          <label for="nombre" class="form-label">Nombre</label>
-                          <input type="text" name="nombre">
-                          <label for="apellido" class="form-label">Apellido</label>
-                          <input type="text" name="apellido">
+                          <label for="empresa" class="form-label">Empresa</label>
+                          <input type="text" name="empresa">
+                          <label for="sector" class="form-label">Sector</label>
+                          <input type="text" name="sector">
+                          <label for="url" class="form-label">Url</label>
+                          <input type="text" name="url">
+                          <label for="explicacion" class="form-label">Explicacion</label>
+                          <input type="text" name="explicacion">
                       </div>
                       <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
-                      <a href="/views/jinete.ejs" class="btn btn-secondary">Cancelar</a>
+                      <a href="/views/informacion.ejs" class="btn btn-secondary">Cancelar</a>
                   </form>                
               </div>
           </div>
@@ -57,21 +59,31 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Sable</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Apellido</th>
+                  <th scope="col">Empresa</th>
+                  <th scope="col">Sector</th>
+                  <th scope="col">Explicación</th>
+                  <th scope="col">Url</th>
+                  <th scope="col">Valoración</th>
                 </tr>
               </thead>
               <tbody>
-                <% results.forEach((id) => { %>                
+                <% results.forEach((results) => { %>                
                 <tr>
-                  <td><%= id.id_jinete %></td>
-                  <td><%= id.sable %></td>
-                  <td><%= id.nombre %></td>
-                  <td><%= id.apellido %></td>
-                  <td>
-                    <a href="/edit" class="btn btn-outline-info">Editar</a>                  
+                  <td><%= results.empresa %></td>
+                  <td><%= results.sector %></td>
+                  <td><%= results.explicacion %></td>
+                  <td><a href="<%= results.url %>" target="_blank" class="btn btn-primary">Ir</a></td>                  
+                  <td><!-- nueva columna -->
+                    <div class="valoracion">
+                      <i class='bx bxs-star' ></i>
+                      <i class='bx bxs-star' ></i>
+                      <i class='bx bxs-star' ></i>
+                      <i class='bx bxs-star' ></i>
+                      <i class='bx bxs-star' ></i>
+                    </div>
+                  </td> 
+                  <td>                     
+                    <a href="/edit/<%= results.id_informacion %>" class="btn btn-outline-info">Editar</a>                  
                   </td>
                 </tr>               
                <% }) %>  
@@ -82,7 +94,7 @@
     
   
     <footer class="bg-dark py-3">
-      <p class="text-center text-white">&copy; U.E.C Caballeria 2023</p>
+      <p class="text-center text-white">&copy; DB Web3</p>
     </footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
